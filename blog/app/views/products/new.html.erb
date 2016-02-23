@@ -1,0 +1,28 @@
+<h1>New Product </h1>
+<%= form_for :product, url: products_path do |f| %>
+
+  <% if @product.errors.any? %>
+      <% @poruka = @product.errors.full_messages_for(:name).join(" ") %>
+      <p><%= @poruka %></p>
+      <p> Doslo je do pogreške! </p>
+  <% end %>
+
+
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<p><%= link_to 'Back', products_path %> <p>

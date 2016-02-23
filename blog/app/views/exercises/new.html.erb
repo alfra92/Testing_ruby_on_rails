@@ -1,0 +1,16 @@
+<h1> Nova vježba </h1>
+
+<%= form_for :exercise , url: exercises_path do |e| %>
+<p>
+  Naziv: <%= e.text_field (:name) %><br>
+</p>
+<p>
+  Mišićna skupina: <%= e.text_field (:muscle_group) %><br>
+</p>
+
+<p>
+  <%= e.submit %>
+</p>
+<% end %>
+
+<p><%= link_to 'Back', exercises_path %></p>

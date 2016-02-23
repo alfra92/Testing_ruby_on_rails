@@ -1,0 +1,18 @@
+<h1> Popis vježbi <h1>
+
+<p><%= link_to 'Dodaj novu vježbu', new_exercise_path %></p>
+
+<table class="sortable">
+  <tr>
+    <th> Naziv </th>
+    <th> Mišićna skupina </th>
+  </tr>
+
+
+  <% @exercises.each do |exercise| %>
+    <tr>
+      <td><%= exercise.name %></td>
+      <td><%= exercise.muscle_group %></td>
+    </tr>
+  <% end %>
+</table>

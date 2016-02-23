@@ -1,0 +1,36 @@
+<h1> Index page of products </h1>
+<p> Lista proizvoda </p>
+<p> <%= link_to 'New product', new_product_path %> </p>
+
+<p>
+<%= radio_button_tag(:beginner_adv, "Lori") %>
+<%= label_tag(:beginner_adv, "I am a beginner") %>
+</p>
+
+<p>
+<%= check_box_tag(:pop_squats) %>
+<%= label_tag(:pop_squats, "Pop(dynamic) squats") %>
+</p>
+
+
+
+
+
+
+
+<table>
+  <tr>
+    <th>Ime</th>
+    <th>Opis</th>
+
+  </tr>
+
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= product.description %></td>
+      <td><%= link_to 'Show', product_path(product) %></td>
+      <td><%= link_to 'Edit', edit_product_path(product) %></td>
+    </tr>
+  <% end %>
+</table>
